@@ -1,4 +1,4 @@
-//1. Factorial of a number using recursion.
+//    1. Factorial of a number using recursion.
 
 #include<stdio.h>
 int fact(int n){
