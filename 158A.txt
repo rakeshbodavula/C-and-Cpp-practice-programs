@@ -1,0 +1,16 @@
+#include<stdio.h>
+#include<string.h>
+int main(){
+   int n,k,sum=0;
+   scanf("%d %d",&n,&k);
+   int arr[n];
+   for(int i=1;i<=n;i++){
+      scanf("%d",&arr[i]);
+   }
+   for(int i=1;i<=n;i++){
+      if(arr[i]>=arr[k] && arr[i]>0)
+         sum+=1;
+   }
+   printf("%d",sum);
+   return 0;
+}
