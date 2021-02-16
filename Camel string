@@ -1,0 +1,22 @@
+//program that prints the given string as a camel string.
+
+#include<stdio.h>
+#include<string.h>
+#include<ctype.h>
+void camelstring(char str[],int n){
+    char arr[n];
+    for(int i=0;i<n;i++){
+        if(i%2==0)
+            printf("%c",tolower(str[i]));
+        else
+            printf("%c",toupper(str[i]));
+    }
+}
+int main(){
+    char str[50];
+    printf("enter a string: ");
+    scanf("%s",str);
+    int n=strlen(str);
+    camelstring(str,n);
+    return 0;
+}
