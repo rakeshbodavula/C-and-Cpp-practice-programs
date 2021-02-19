@@ -1,0 +1,10 @@
+#include<stdio.h>
+int main(){
+    int k,n,w;
+    scanf("%d %d %d",&k,&n,&w);
+    int cost=((w*(w+1))/2)*k  - n;
+    if(cost>0)
+    printf("%d\n",cost);
+    else printf("0\n");
+    return 0;
+}
