@@ -1,0 +1,45 @@
+\\    IF THE INPUT IS STRING.
+
+#include<stdio.h>
+#include<string.h>
+int main(){
+    char str[1000];
+    printf("Enter a number: ");
+    scanf("%s",str);
+    int arr[1000],res,max=0,i;
+    for( i=0;i<strlen(str);i++){
+        arr[i]=(int)str[i]-48;
+    }
+    for(int j=2;j<=i;j++){
+        if(arr[j]%2!=0){
+            res=arr[j-2]*100 + arr[j-1]*10 + arr[j];
+            if(res>max && res<1000) max=res;
+        }
+    }
+    printf("\nThe largest 3-digit odd number is: %d\n\n",max);
+    return 0;
+}
+
+/*
+//    IF THE INPUT IS INTEGER.
+#include<stdio.h>
+int main(){
+    long long int n;
+    scanf("%lld",&n);
+    int arr[1000],num,i=-1,res,max=0;
+    num=n;
+    while(n){
+        arr[++i]=(n%10);
+        n/=10;
+    }
+    for(int j=i-2;j>=0;j--){
+        if(arr[j]%2!=0){
+            res=arr[j+2]*100 + arr[j+1]*10 + arr[j];
+            if(res> max && res<1000) max=res;
+        }
+    }
+    printf("%d\n",max);
+    return 0;
+}
+
+*/
