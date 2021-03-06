@@ -1,0 +1,14 @@
+#include<stdio.h>
+int main(){
+    int n,a=0,b=1,c;
+    printf("Enter the value of n: ");
+    scanf("%d",&n);
+    printf("The fibonacci sequence upto %dth term is:\n%d %d ",n,a,b);
+    for(int i=2;i<=n;i++){
+        c=a+b;
+        a=b,b=c;
+        printf("%d ",c);
+    }
+    printf("\nThe %dth fibonacci term is : %d\n",n,c);
+    return 0;
+}
