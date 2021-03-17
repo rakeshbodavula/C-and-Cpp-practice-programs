@@ -1,0 +1,40 @@
+#include<stdio.h>
+int main(){
+    int r1,c1,r2,c2;
+    printf("Enter no.of rows and columns for matrix1 and matrix2: ");
+    scanf("%d %d %d %d",&r1,&c1,&r2,&c2);
+    int mat1[r1][c1],mat2[r2][c2],res[r1][c2];
+    if(c1!=r2) printf("Multiplication of these matrices is not valid because %d is not equal to %d\n",c1,r2);
+    else{
+        printf("Enter elements of the matrix1: ");
+        for(int i=0;i<r1;i++){
+            for(int j=0;j<c1;j++){
+                scanf("%d",&mat1[i][j]);
+            }
+        }
+        printf("Enter elements of the matrix2: ");
+        for(int i=0;i<r2;i++){
+            for(int j=0;j<c2;j++){
+                scanf("%d",&mat2[i][j]);
+            }
+        }
+
+    int sum=0;
+    for(int i=0;i<r1;i++){
+        for(int j=0;j<c2;j++){
+            sum=0;
+            for(int k=0;k<c1;k++){
+                sum+=mat1[i][k]*mat2[k][j];
+            }
+            res[i][j]=sum;
+        }
+    }
+    for(int i=0;i<r1;i++){
+        for(int j=0;j<c2;j++){
+            printf("%d ",res[i][j]);
+        }
+        printf("\n");
+    }
+    }
+    return 0;
+}
