@@ -1,0 +1,21 @@
+#include<stdio.h>
+int primelist(int *ptr,int n){
+    int i=0,count=0,j;
+    while(++i<=n){
+        j=1;
+        while(++j<=i/2){
+        if(i%j==0 || i==j) break;
+        }
+        if(j>i/2) *(ptr+count++)=i;
+    }
+    return count;
+}
+int main(){
+    int n,arr[1000],*ptr=arr;
+    printf("Enter a number to find all the prime numbers <= that number: ");
+    scanf("%d",&n);
+    int count=primelist(ptr,n);
+    printf("The prime numbers <= %d are: ",n);
+    for(int i=0;i<count;i++) printf("%d ",arr[i]);
+    return 0;
+}
