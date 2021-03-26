@@ -1,0 +1,37 @@
+#include<stdio.h>
+#include<string.h>
+#include<stdlib.h>
+void lcss(char* str,char *arr,int l1,int l2){
+    int res[l1+1][l2+1];
+    int max=0,row,col,count;
+    for(int i=0;i<=l1;i++){
+        for(int j=0;j<=l2;j++){
+            if(i==0 || j==0) res[i][j]=0;
+            else if(str[i-1]==arr[j-1]){
+                res[i][j]=res[i-1][j-1]+1;
+                if(max<res[i][j]){
+                    max=res[i][j];
+                    row=i,col=j;
+                }
+            }
+            else res[i][j]=0;
+        }
+    }
+    count=max;
+    char* final = (char*)malloc((max) * sizeof(char));
+    while(res[row][col]!=0){
+        final[--max]=str[row-1];
+        row--;
+        col--;
+    }
+    for(int i=0;i<count;i++) printf("%c",*(final+i));
+}
+int main(){
+    char str[20],arr[20];
+    int row=0;
+    printf("enter 2 strings: ");
+    scanf("%s %s",str,arr);
+    int l1=strlen(str),l2=strlen(arr);
+    lcss(str,arr,l1,l2);
+    return 0;
+}
