@@ -1,0 +1,20 @@
+/*
+A 
+B B
+C C C
+D D D D
+*/
+#include<stdio.h>
+int main(){
+   char n;
+   printf("enter the uppercase letter u want in the last row: ");
+   scanf("%c",&n);
+   int k=(int)n-64;
+   for(int i=0;i<k;i++){   
+      for(int j=0;j<i+1;j++){
+         printf("%c ",65+i);
+      }
+      printf("\n");
+   }
+   return 0;
+}
