@@ -1,0 +1,21 @@
+#include<stdio.h>
+int out(int arr[],int n,int l){
+    if(n==l-1) printf("%d\n",arr[l-1]);
+    else{
+        printf("%d ",arr[n]);
+        out(arr,n+1,l);
+    }
+}
+int main(){
+    int n;
+    printf("enter a no.of elements in array: ");
+    scanf("%d",&n);
+    int arr[n];
+    printf("enter elements of array: ");
+    for(int i=0;i<n;i++){
+        scanf("%d",&arr[i]);
+    }
+    printf("the elements of array are: ");
+    out(arr,0,n);
+    return 0;
+}
