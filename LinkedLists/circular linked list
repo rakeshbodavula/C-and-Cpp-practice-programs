@@ -1,1 +1,67 @@
+#include<stdio.h>
+#include<stdlib.h>
 
+struct node{
+    int data;
+    struct node *link;
+};
+
+struct node* create_circular_list(){    // Creating the circular Linked List.
+    int num;
+    printf("Enter number of nodes: ");
+    scanf("%d",&num);
+    struct node *head,*tmp;
+    for(int i=0;i<num;i++){
+        if(i==0){
+            head=malloc(sizeof(struct node));
+            tmp=head;
+        }
+        else{
+            tmp->link=malloc(sizeof(struct node));
+            tmp=tmp->link;
+        }
+        printf("Enter data for node--> %d:  ",i+1);
+        scanf("%d",&tmp->data);
+    }
+    tmp->link=head;     // Since, it is a circular list the last node pointing address is 
+                        // given " head " instead of " NULL ".
+    return head;
+}
+
+struct node* insert_at_begin_circular_list(struct node* head,int data){
+    struct node* ptr=head;
+    struct node* tmp=malloc(sizeof(struct node));
+    tmp->data=data;
+    tmp->link=head;
+    while(ptr->link!=head) ptr=ptr->link;
+    ptr->link=tmp;
+    head=tmp;
+    return head;
+}
+
+int main(){
+    struct node *head=malloc(sizeof(struct node));
+    head=create_circular_list();
+    struct node* p=head;
+
+    printf("The data of circular linked list is: %d ",p->data);
+    p=p->link;
+    while(p!=head){
+        printf("%d ",p->data);
+        p=p->link;
+    }
+
+    int begin;
+    printf("\nEnter data to be inserted at the beginning: ");
+    scanf("%d",&begin);
+    head=insert_at_begin_circular_list(head,begin);
+    p=head;
+
+    printf("The circular list after insertion is: %d ",p->data);
+    p=p->link;
+    while(p!=head){
+        printf("%d ",p->data);
+        p=p->link;
+    }
+    return 0;
+}
