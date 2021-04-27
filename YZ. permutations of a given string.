@@ -1,0 +1,27 @@
+#include<stdio.h>
+#include<string.h>
+void swap(char *a,char *b){
+   int tmp=*b;
+   *b=*a;
+   *a=tmp;
+}
+void permute(char* set, int begin, int end) {
+   int i,range = end - begin;
+   if (range == 1)
+      printf("set: %s\n", set);
+   else {
+      for(i = 0; i < range; i++) {
+         swap(&set[begin], &set[begin+i]);
+         permute(set, begin+1, end);
+         swap(&set[begin], &set[begin+i]);
+      }
+   }
+}
+int main(){
+   char arr[100];
+   printf("enter a string without spaces and repeated letters: ");
+   scanf("%s",arr);
+   int l=0,u=strlen(arr);
+   permute(arr,l,u);
+   return 0;
+}
