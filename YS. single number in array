@@ -1,0 +1,21 @@
+/*  Ex:- arr=[1,2,1,3,2],n=5--> 1,2 are repeated twice and 3 is unique.
+    This is just to show that XOR can be used to check if the number is repeated even times or odd times.
+    if it is repeated even times XOR will be 0 else XOR is equal to the number which is repeated.
+    conditions:- only one element should be unique and remaining elements should repeat even times.
+*/
+#include<iostream>
+#include<vector>
+#include<algorithm>
+using namespace std;
+int main(){
+    int n;
+    cout<<"Enter odd no.of elements in array: ";
+    cin>>n;
+    vector<int> arr(n);
+    cout<<"Enter elements of array: ";
+    for(int i=0;i<n;i++) cin>>arr[i];
+    int i=1;
+    while(arr[i]) arr[0]^=arr[i++];
+    cout<<"The number which is unique is : "<<arr[0];
+    return 0;
+}
