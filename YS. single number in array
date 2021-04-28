@@ -19,3 +19,19 @@ int main(){
     cout<<"The number which is unique is : "<<arr[0];
     return 0;
 }
+
+
+/*Another way is:
+        
+        for(i=0;i<size;i++){
+        count=0;
+        for(int j=0;j<size;j++){
+            if(nums[i]==nums[j] && i!=j){
+                count=1;
+                break;
+            }
+        }
+            if(count==0) break;
+    }
+    
+*/
