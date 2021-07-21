@@ -1,0 +1,59 @@
+*{
+    margin: 3vh;
+    padding: 0;
+    
+}
+
+#heading{
+    text-align: center;
+    border: red solid 0.4vh;
+    border-radius: 1vh;
+    border-style: dotted;
+    background-color: aqua;
+}
+
+.details{
+    height: 5vh;
+    width: 40%;
+    background-color: lightcyan;
+    border: green solid;
+    border-radius: 1vh;
+    border-style: double;
+}
+
+#textarea{
+    width: 70%;
+    position: relative;
+    top:-4vh;
+    background-color: lightcyan;
+    border: green solid;
+    border-radius: 1vh;
+    border-style: double;
+}
+
+form{
+    padding: 2vh;
+    border: blue solid 3px;
+    border-radius: 2vh;
+    background-color:lightsteelblue;
+}
+
+#course{
+    background-color: lightyellow;
+    color: red;
+    cursor: pointer;
+}
+.sports{
+    margin-left: 1vh;
+    width: 100%;
+}
+.submit{
+    background-color: orange;
+    position: relative;
+    height: 5vh;
+    cursor: pointer;
+    width: 15vh;
+}
+a{
+    background-color: orange;
+}
